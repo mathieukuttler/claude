@@ -940,3 +940,51 @@ div.section-with-red-border {
         margin-top: var(--space-sm);
     }
 }
+
+
+/* upgrades 250306 */
+
+/* ==============
+Home - vertical alignments 
+============= */
+
+/* Improved section with red border styling  */
+.section-with-red-border,
+div.section-with-red-border,
+.container.section-with-red-border {
+    /* Ensure border aligns with content */
+    border-left: 4px solid var(--color-red) !important;
+    padding-left: var(--space-md) !important;
+    margin-top: 3rem !important;
+    margin-bottom: 4rem !important; /* Increased from 3rem to create more space below */
+    max-width: 60% !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    box-sizing: border-box !important;
+    position: relative !important; /* Added for positioning context */
+    display: inline-block !important; /* Make container wrap content */
+}
+
+/* Add responsive margin adjustment for mobile */
+@media (max-width: 768px) {
+    .section-with-red-border,
+    div.section-with-red-border,
+    .container.section-with-red-border {
+        max-width: 100% !important;
+        margin-bottom: 3rem !important; /* Slightly less space on mobile */
+    }
+}
+
+/* Fix for the hero-text elements inside the red-bordered section to ensure proper spacing */
+.section-with-red-border .hero-text,
+.container.section-with-red-border .hero-text,
+div.section-with-red-border .hero-text {
+    margin-bottom: var(--space-md) !important;
+}
+
+/* Make sure the last element in the red-bordered section has no bottom margin */
+.section-with-red-border .hero-text:last-child,
+.container.section-with-red-border .hero-text:last-child,
+div.section-with-red-border .hero-text:last-child {
+    margin-bottom: 0 !important;
+}
