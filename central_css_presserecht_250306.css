@@ -988,3 +988,305 @@ div.section-with-red-border .hero-text {
 div.section-with-red-border .hero-text:last-child {
     margin-bottom: 0 !important;
 }
+
+
+/* ==============
+testing submenu in dedicated header template (header with submenu)
+=============*/
+/* ==============================
+   MOBILE MENU STYLES
+   Specifically for submenus in mobile view
+   ============================== */
+
+/* Mobile breakpoint - ensure this matches your Bricks settings */
+@media (max-width: 768px) {
+    /* Basic mobile menu container styles */
+    .mobile-menu-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--color-navy);
+        z-index: 9999;
+        overflow-y: auto;
+        padding: var(--space-md);
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .mobile-menu-container.active {
+        transform: translateX(0);
+    }
+
+    /* Close button for mobile menu */
+    .mobile-menu-close {
+        position: absolute;
+        top: var(--space-md);
+        right: var(--space-md);
+        color: var(--color-white);
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    /* Mobile menu navigation items */
+    .mobile-menu-container ul {
+        list-style: none;
+        padding: 0;
+        margin: var(--space-lg) 0 0 0;
+    }
+
+    .mobile-menu-container li {
+        position: relative;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .mobile-menu-container li:last-child {
+        border-bottom: none;
+    }
+
+    /* Main level menu items - larger touch targets */
+    .mobile-menu-container > ul > li > a {
+        font-family: 'Open Sans', Arial, sans-serif;
+        font-weight: 400;
+        font-size: 1.1rem;
+        color: var(--color-white);
+        text-decoration: none;
+        padding: var(--space-md) 0;
+        display: block;
+        position: relative;
+    }
+
+    /* Dropdown indicator for items with children */
+    .mobile-menu-container .menu-item-has-children > a::after {
+        content: '\f107'; /* Font Awesome down arrow */
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        position: absolute;
+        right: var(--space-xs);
+        top: 50%;
+        transform: translateY(-50%);
+        transition: transform 0.3s ease;
+    }
+
+    /* Rotate arrow when submenu is open */
+    .mobile-menu-container .menu-item-has-children.submenu-open > a::after {
+        transform: translateY(-50%) rotate(180deg);
+    }
+
+    /* Submenu styling - hidden by default */
+    .mobile-menu-container .sub-menu {
+        display: none;
+        background-color: rgba(255, 255, 255, 0.05);
+        margin: 0;
+        padding-left: var(--space-md);
+    }
+
+    /* Submenu display when parent has .submenu-open class */
+    .mobile-menu-container .menu-item-has-children.submenu-open > .sub-menu {
+        display: block;
+    }
+
+    /* Styling for submenu items */
+    .mobile-menu-container .sub-menu li {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .mobile-menu-container .sub-menu li:last-child {
+        border-bottom: none;
+    }
+
+    .mobile-menu-container .sub-menu a {
+        font-family: 'Open Sans', Arial, sans-serif;
+        font-weight: 400;
+        font-size: 1rem;
+        color: var(--color-white);
+        padding: var(--space-md) 0;
+        display: block;
+        opacity: 0.8;
+    }
+
+    /* Active and hover states */
+    .mobile-menu-container a:hover,
+    .mobile-menu-container li.current-menu-item > a {
+        color: var(--color-red);
+    }
+
+    /* Second level submenu items */
+    .mobile-menu-container .sub-menu .sub-menu {
+        background-color: rgba(255, 255, 255, 0.02);
+        border-left: 2px solid var(--color-red);
+    }
+
+    /* Specific styling for Bricks nav elements */
+    .brxe-nav-menu.mobile-active {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--color-navy);
+        z-index: 999;
+        overflow-y: auto;
+        padding: var(--space-md);
+    }
+
+    /* Bricks-specific mobile menu navigation */
+    .brxe-nav-menu.mobile-active ul.bricks-nav-menu {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .brxe-nav-menu.mobile-active ul.bricks-nav-menu > li {
+        width: 100%;
+        margin: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .brxe-nav-menu.mobile-active ul.bricks-nav-menu > li > a {
+        padding: var(--space-md) 0;
+        color: var(--color-white);
+        font-size: 1.1rem;
+    }
+
+    /* Bricks dropdown indicators */
+    .brxe-nav-menu.mobile-active .menu-item-has-children > a .bricks-mobile-submenu-toggle,
+    .brxe-nav-menu.mobile-active .menu-item-has-children > a .bricks-submenu-toggle {
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: var(--space-md);
+        color: var(--color-white);
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 10;
+    }
+
+    /* Submenu display in Bricks nav */
+    .brxe-nav-menu.mobile-active .bricks-nav-menu .sub-menu {
+        position: static;
+        width: 100%;
+        display: none;
+        box-shadow: none;
+        background-color: rgba(255, 255, 255, 0.05);
+        padding-left: var(--space-md);
+        margin: 0;
+    }
+
+    /* Make submenu visible when expanded */
+    .brxe-nav-menu.mobile-active .bricks-nav-menu .menu-item.brx-open > .sub-menu {
+        display: block;
+    }
+
+    /* Remove desktop-specific submenu styling for mobile */
+    .brxe-nav-menu.mobile-active .bricks-nav-menu .sub-menu li:before {
+        display: none !important;
+    }
+
+    /* Sub-submenu styling for Bricks */
+    .brxe-nav-menu.mobile-active .bricks-nav-menu .sub-menu .sub-menu {
+        left: 0 !important;
+        top: 0 !important;
+        margin: 0 !important;
+        border-left: 2px solid var(--color-red);
+        background-color: rgba(255, 255, 255, 0.02);
+    }
+
+    /* Touch-friendly submenu toggle - increase clickable area */
+    .brxe-nav-menu.mobile-active .bricks-mobile-submenu-toggle,
+    .mobile-menu-submenu-toggle {
+        width: 44px; /* Recommended minimum touch target size */
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        right: 0;
+        top: 0;
+        color: var(--color-white);
+        cursor: pointer;
+        z-index: 10;
+    }
+
+    /* Custom animation for submenu toggle */
+    .brxe-nav-menu.mobile-active .menu-item-has-children.brx-open > a .bricks-mobile-submenu-toggle:before,
+    .mobile-menu-submenu-toggle.active:before {
+        transform: rotate(180deg);
+    }
+
+    /* Override any desktop submenu positioning */
+    .brxe-nav-menu.mobile-active .sub-menu .sub-menu {
+        left: 0 !important;
+    }
+
+    /* Ensure proper spacing for deeply nested items */
+    .brxe-nav-menu.mobile-active .sub-menu .sub-menu .sub-menu {
+        padding-left: var(--space-sm);
+    }
+
+    /* Disable hover behavior for desktop menus */
+    .brxe-nav-menu.mobile-active .menu-item:hover > .sub-menu {
+        display: none;
+    }
+
+    /* Only show submenu when explicitly toggled */
+    .brxe-nav-menu.mobile-active .menu-item.brx-open > .sub-menu {
+        display: block;
+    }
+}
+
+/* Override specific Bricks menu behavior in mobile mode */
+@media (max-width: 768px) {
+    /* Ensure site remains fixed when menu is open to prevent scrolling */
+    body.bricks-mobile-menu-active {
+        overflow: hidden;
+    }
+
+    /* Ensure z-index is high enough to display above other content */
+    #brx-mobile-menu-container,
+    .bricks-mobile-menu-wrapper {
+        z-index: 9999 !important;
+    }
+
+    /* Fix for Bricks specifically - ensure menu is visible when active */
+    .brxe-nav-menu[data-mobile-menu="true"].show {
+        display: block !important;
+        visibility: visible !important;
+    }
+
+    /* Make navigation links have larger touch targets */
+    nav.brxe-nav-menu.show ul.bricks-nav-menu li a,
+    nav.brxe-nav-menu.show .menu-item > a {
+        padding: 15px 0 !important; /* Increase vertical padding */
+        min-height: 44px !important; /* Minimum recommended touch target size */
+    }
+
+    /* Add specific styling for the mobile toggle element */
+    .bricks-mobile-menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        background: transparent;
+        border: none;
+        padding: 10px;
+        color: var(--color-white);
+    }
+
+    /* Animation for hamburger to X transition */
+    .bricks-mobile-menu-toggle .bar {
+        transition: transform 0.3s ease;
+    }
+
+    /* Override any competing styles for touch interaction */
+    .brxe-nav-menu[data-mobile-menu="true"] a,
+    .brxe-nav-menu[data-mobile-menu="true"] li,
+    .brxe-nav-menu[data-mobile-menu="true"] .sub-menu {
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+    }
+}
