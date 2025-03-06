@@ -174,42 +174,6 @@ div.main-navigation a,
     color: var(--color-white) !important;
 }
 
-/* Ultimate dropdown indicator styling */
-.main-navigation .menu-item-has-children > a:after,
-.main-navigation .menu-item-has-children > a::after,
-.main-navigation .menu-item-has-children > a span,
-.main-navigation .menu-item-has-children > a i,
-.main-navigation .menu-item-has-children > a svg,
-.main-navigation .has-dropdown > a:after,
-.main-navigation .has-dropdown > a::after,
-.main-navigation .has-dropdown > a span,
-.main-navigation .has-dropdown > a i,
-.main-navigation .has-dropdown > a svg,
-.brxe-nav-menu .menu-item-has-children > a:after,
-.brxe-nav-menu .menu-item-has-children > a::after,
-.brxe-nav-menu .menu-item-has-children > a span,
-.brxe-nav-menu .menu-item-has-children > a i,
-.brxe-nav-menu .menu-item-has-children > a svg,
-.brxe-nav-menu .has-dropdown > a:after,
-.brxe-nav-menu .has-dropdown > a::after,
-.brxe-nav-menu .has-dropdown > a span,
-.brxe-nav-menu .has-dropdown > a i,
-    brxe-nav-menu .has-dropdown > a svg,
-    bricks-nav-menu > .menu-item-has-children > a:after,
-    bricks-nav-menu > .menu-item-has-children > a::after,
-    bricks-nav-menu > .menu-item-has-children > a span,
-    bricks-nav-menu > .menu-item-has-children > a i,
-    bricks-nav-menu > .menu-item-has-children > a svg,
-    bricks-nav-menu-icon,
-    bricks-nav-menu .dropdown-icon,
-    bricks-nav-menu .submenu-toggle {
-    color: var(--color-white) !important;
-    fill: var(--color-white) !important;
-    stroke: var(--color-white) !important;
-    border-color: var(--color-white) !important;
-    background-image: none !important;
-}
-
 
 
 
