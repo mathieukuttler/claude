@@ -1,0 +1,942 @@
+/* ====================================
+   PRESSERECHT.DE CENTRAL CSS FILE
+   Vertical alignment with 100% width elements
+   ==================================== */
+
+/* Core Variables */ 
+:root {
+    /* Colors - Updated with exact hex codes from reference */
+    --color-red: #ff163b;     /* Primary red */
+    --color-pink: #ff8a9d;    /* Secondary pink */
+    --color-navy: #001e5b;    /* Dark blue background */
+    --color-medium-navy: #405785;    /* Medium navy */
+    --color-light-navy: #808fad; /* Light navy */
+    --color-base-gray: #ccd2de; /* base gray */
+    --color-light-gray: #f3f4f8; /* Light gray */
+    --color-white: #ffffff;   /* White */
+
+    /* Spacing */
+    --space-xs: 0.5rem;   /* 8px */
+    --space-sm: 1rem;     /* 16px */
+    --space-md: 1.5rem;   /* 24px */
+    --space-lg: 2rem;     /* 32px */
+    --space-xl: 3rem;     /* 48px */
+}
+
+/* Font Definitions */
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+}
+
+/* Standard text sizes for consistent typography */
+.text-headline {
+    font-size: 1.5rem; /* 24pt */
+    line-height: 1.3;
+}
+
+.text-standard {
+    font-size: 1rem; /* 16pt */
+    line-height: 1.5;
+}
+
+.light-text {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-weight: 300;
+}
+
+.regular-text {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-weight: 400;
+}
+
+.bold-text {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-weight: 700;
+}
+
+.italic-text {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-style: italic;
+}
+
+/* ==============================
+   CONTAINER SYSTEM & LAYOUT
+   ============================== */
+
+/* Base Container System for Vertical Alignment */
+.full-width-container {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+.content-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+}
+
+/* ==============================
+   HEADER STYLES
+   ============================== */
+
+/* Header Structure */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+/* Logo - UPDATED with more spacing */
+.site-logo {
+    max-height: 50px;
+    width: auto;
+    margin-right: 40px; /* Added margin to create space */
+}
+
+/* Main Navigation - ENHANCED AND FIXED */
+.main-navigation {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.main-navigation ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-navigation li {
+    margin-left: 25px; /* Increased spacing between items */
+    position: relative;
+}
+
+/* Super-specific navigation font size fix - UPDATED WITH WORKING VALUES */
+.main-navigation ul li a,
+.main-navigation a,
+.brxe-nav-menu a,
+.brxe-nav-menu li a,
+nav.main-navigation a,
+div.main-navigation a,
+.header-content .main-navigation a,
+[class*="main-navi"] a,
+[class*="main-navi"] li a,
+.brxe-nav-menu .menu-item a,
+.main-navigation .menu-item a,
+.main-navigation .menu-item > a,
+.main-navigation ul li.menu-item > a {
+    font-family: 'Open Sans', Arial, sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 12px !important; /* UPDATED to 12px as specified */
+    line-height: 1.4 !important;
+    color: var(--color-white) !important;
+    text-decoration: none !important;
+    padding: 8px 0 !important;
+    transition: color 0.3s ease !important;
+    letter-spacing: 0.2px !important;
+    text-wrap: balance !important; /* ADDED as specified */
+    text-align: center !important; /* ADDED as specified */
+}
+
+.main-navigation a:hover {
+    color: var(--color-base-gray) !important;
+}
+
+/* Style dropdown indicators in navigation */
+.main-navigation .menu-item-has-children > a::after,
+.main-navigation li.menu-item-has-children > a::after,
+.main-navigation .sub-menu .menu-item-has-children > a::after,
+.main-navigation .brxe-nav-menu .menu-item-has-children > a::after {
+    color: var(--color-white) !important;
+    opacity: 1 !important;
+    border-color: var(--color-white) !important;
+}
+
+/* For Bricks-specific dropdown indicators */
+.brxe-nav-menu .bricks-nav-menu-icon {
+    color: var(--color-white) !important;
+    fill: var(--color-white) !important;
+    stroke: var(--color-white) !important;
+}
+
+/* For SVG icons */
+.main-navigation .menu-item-has-children > a svg,
+.main-navigation li.menu-item-has-children > a svg,
+.brxe-nav-menu .menu-item-has-children > a svg {
+    fill: var(--color-white) !important;
+    color: var(--color-white) !important;
+}
+
+/* Ultimate dropdown indicator styling */
+.main-navigation .menu-item-has-children > a:after,
+.main-navigation .menu-item-has-children > a::after,
+.main-navigation .menu-item-has-children > a span,
+.main-navigation .menu-item-has-children > a i,
+.main-navigation .menu-item-has-children > a svg,
+.main-navigation .has-dropdown > a:after,
+.main-navigation .has-dropdown > a::after,
+.main-navigation .has-dropdown > a span,
+.main-navigation .has-dropdown > a i,
+.main-navigation .has-dropdown > a svg,
+.brxe-nav-menu .menu-item-has-children > a:after,
+.brxe-nav-menu .menu-item-has-children > a::after,
+.brxe-nav-menu .menu-item-has-children > a span,
+.brxe-nav-menu .menu-item-has-children > a i,
+.brxe-nav-menu .menu-item-has-children > a svg,
+.brxe-nav-menu .has-dropdown > a:after,
+.brxe-nav-menu .has-dropdown > a::after,
+.brxe-nav-menu .has-dropdown > a span,
+.brxe-nav-menu .has-dropdown > a i,
+    brxe-nav-menu .has-dropdown > a svg,
+    bricks-nav-menu > .menu-item-has-children > a:after,
+    bricks-nav-menu > .menu-item-has-children > a::after,
+    bricks-nav-menu > .menu-item-has-children > a span,
+    bricks-nav-menu > .menu-item-has-children > a i,
+    bricks-nav-menu > .menu-item-has-children > a svg,
+    bricks-nav-menu-icon,
+    bricks-nav-menu .dropdown-icon,
+    bricks-nav-menu .submenu-toggle {
+    color: var(--color-white) !important;
+    fill: var(--color-white) !important;
+    stroke: var(--color-white) !important;
+    border-color: var(--color-white) !important;
+    background-image: none !important;
+}
+
+
+
+
+/* --------------------------
+   COMPLETE SUBMENU FIX FOR BRICKS
+--------------------------- */
+/* Target Bricks-specific nav classes */
+.main-navigation ul.bricks-nav-menu > li > .sub-menu,
+.main-navigation ul > li > .sub-menu,
+.brxe-nav-menu ul > li > .sub-menu,
+nav.main-navigation .sub-menu {
+    display: none;
+    position: absolute !important;
+    background-color: var(--color-white) !important;
+    min-width: 220px !important;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1) !important;
+    z-index: 999 !important;
+    padding: 0 !important;
+    border-radius: 3px !important;
+    top: 100% !important;
+    left: 0 !important;
+    margin-top: 5px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Show submenu on parent hover - specifically for Bricks */
+.main-navigation ul.bricks-nav-menu > li:hover > .sub-menu,
+.main-navigation ul > li:hover > .sub-menu,
+.brxe-nav-menu ul > li:hover > .sub-menu,
+nav.main-navigation li:hover > .sub-menu {
+    display: block !important;
+}
+
+/* Target all submenu items */
+.main-navigation .sub-menu li,
+.brxe-nav-menu .sub-menu li,
+.main-navigation ul.bricks-nav-menu .sub-menu li {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    position: relative !important;
+    display: block !important;
+    border-bottom: 1px solid var(--color-base-gray) !important;
+}
+
+/* Fix the links in submenus */
+.main-navigation .sub-menu li a,
+.main-navigation .sub-menu a,
+.brxe-nav-menu .sub-menu li a,
+.brxe-nav-menu .sub-menu a,
+.main-navigation ul.bricks-nav-menu .sub-menu li a {
+    padding: 12px 15px 12px 20px !important;
+    display: block !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    text-align: left !important;
+    color: var(--color-navy) !important;
+    background-color: var(--color-white) !important;
+    line-height: 1.4 !important;
+    text-wrap: normal !important;
+    width: 100% !important;
+}
+
+/* Red indicator */
+.main-navigation .sub-menu li:before,
+.brxe-nav-menu .sub-menu li:before,
+.main-navigation ul.bricks-nav-menu .sub-menu li:before {
+    content: '' !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 4px !important;
+    height: 100% !important;
+    background-color: var(--color-red) !important;
+    opacity: 0 !important;
+    transition: opacity 0.3s ease !important;
+    z-index: 10 !important;
+    pointer-events: none !important;
+}
+
+/* Hover indicator effect */
+.main-navigation .sub-menu li:hover:before,
+.brxe-nav-menu .sub-menu li:hover:before,
+.main-navigation ul.bricks-nav-menu .sub-menu li:hover:before {
+    opacity: 1 !important;
+}
+
+/* Hover styles for submenu links */
+.main-navigation .sub-menu li:hover > a,
+.main-navigation .sub-menu a:hover,
+.brxe-nav-menu .sub-menu li:hover > a,
+.brxe-nav-menu .sub-menu a:hover,
+.main-navigation ul.bricks-nav-menu .sub-menu li:hover > a {
+    background-color: var(--color-light-gray) !important;
+    color: var(--color-red) !important;
+}
+
+/* Current/active menu items */
+.main-navigation .sub-menu .current-menu-item > a,
+.brxe-nav-menu .sub-menu .current-menu-item > a {
+    background-color: var(--color-light-gray) !important;
+    color: var(--color-red) !important;
+}
+
+.main-navigation .sub-menu .current-menu-item:before,
+.brxe-nav-menu .sub-menu .current-menu-item:before {
+    opacity: 1 !important;
+}
+/* --------------------------
+   END COMPLETE SUBMENU FIX
+--------------------------- */
+
+/* --------------------------
+   SUB-SUBMENU POSITIONING (THIRD LEVEL)
+--------------------------- */
+/* Position sub-submenus to the right of parent */
+.main-navigation .sub-menu .sub-menu,
+.brxe-nav-menu .sub-menu .sub-menu,
+.main-navigation ul.bricks-nav-menu .sub-menu .sub-menu {
+    left: 100% !important; /* Position to the right of parent */
+    top: 0 !important; /* Align with the top of parent */
+    margin-left: 1px !important; /* Small gap between levels */
+    margin-top: 0 !important; /* No vertical offset */
+}
+
+/* Show sub-submenus on hover of parent submenu item */
+.main-navigation .sub-menu li:hover > .sub-menu,
+.brxe-nav-menu .sub-menu li:hover > .sub-menu,
+.main-navigation ul.bricks-nav-menu .sub-menu li:hover > .sub-menu {
+    display: block !important;
+}
+
+/* Add arrow indicator for items with children */
+.main-navigation .sub-menu .menu-item-has-children > a:after,
+.brxe-nav-menu .sub-menu .menu-item-has-children > a:after,
+.main-navigation ul.bricks-nav-menu .sub-menu .menu-item-has-children > a:after {
+    content: '\f105' !important; /* Font Awesome right arrow */
+    font-family: 'Font Awesome 5 Free' !important;
+    font-weight: 900 !important;
+    position: absolute !important;
+    right: 10px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    color: var(--color-navy) !important;
+}
+
+/* Change arrow color on hover */
+.main-navigation .sub-menu .menu-item-has-children:hover > a:after,
+.brxe-nav-menu .sub-menu .menu-item-has-children:hover > a:after,
+.main-navigation ul.bricks-nav-menu .sub-menu .menu-item-has-children:hover > a:after {
+    color: var(--color-red) !important;
+}
+
+/* Add padding for menu items with children to accommodate arrow */
+.main-navigation .sub-menu .menu-item-has-children > a,
+.brxe-nav-menu .sub-menu .menu-item-has-children > a,
+.main-navigation ul.bricks-nav-menu .sub-menu .menu-item-has-children > a {
+    padding-right: 25px !important; /* Make room for the arrow */
+}
+/* --------------------------
+   END SUB-SUBMENU POSITIONING
+--------------------------- */
+
+
+/* Search Button - UPDATED spacing and styling */
+.search-container {
+    margin-left: 40px; /* Increased from 20px */
+}
+
+.search-button {
+    background-color: rgba(255, 255, 255, 0.15) !important; /* Adjusted opacity */
+    border: none;
+    border-radius: 20px !important;
+    padding: 6px 16px !important; /* Adjusted padding */
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.search-button .search-icon {
+    margin-right: 5px;
+}
+
+.search-button .search-text {
+    font-size: 14px !important; /* Match navigation size */
+    text-transform: uppercase;
+    font-weight: 400 !important;
+}
+
+/* Text in blue section with red border - UPDATED FONT SIZES */
+.hero-title {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem; /* 24pt converted to rem */
+    color: var(--color-white);
+    margin-bottom: var(--space-sm);
+    line-height: 1.3;
+}
+
+.hero-text {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 1rem; /* 16pt converted to rem */
+    color: var(--color-white);
+    line-height: 1.5;
+    margin-bottom: var(--space-md);
+}
+
+/* ==============================
+   ALERT BAR STYLES
+   ============================== */
+
+.alert-section {
+    width: 100%;
+    background-color: var(--color-red);
+    padding: 15px 0;
+    margin-top: 0;
+}
+
+.alert-content {
+    text-align: center;
+}
+
+.alert-label {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 1rem; /* 16pt */
+    color: var(--color-white);
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.alert-title {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem; /* 24pt */
+    color: var(--color-white);
+    margin: 0;
+    display: block;
+}
+
+/* ==============================
+   HEADER META STYLES
+   ============================== */
+
+.header-meta {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-weight: 300;
+    font-size: 1rem; /* Updated to 16pt (1rem) */
+    color: var(--color-light-navy);
+}
+
+/* ==============================
+   TEXT ARTICLE STYLES
+   ============================== */
+
+.text-article {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 1rem; /* Updated to 16pt (1rem) */
+    color: var(--color-navy);
+    line-height: 1.5;
+}
+
+.header-article {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem; /* Updated to 24pt (1.5rem) */
+    color: var(--color-navy);
+}
+
+/* ==============================
+   BUTTON STYLES
+   ============================== */
+
+.button1 {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 1rem; /* Updated to 16pt (1rem) */
+    background-color: transparent;
+    border: 1px solid var(--color-navy);
+    border-radius: 20px;
+    padding: 5px 15px;
+    color: var(--color-navy);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.button1:hover {
+    background-color: var(--color-navy);
+    color: var(--color-white);
+}
+
+.button2 {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 1rem; /* Updated to 16pt (1rem) */
+    background-color: transparent;
+    border: 1px solid var(--color-navy);
+    border-radius: 20px;
+    padding: 5px 15px;
+    color: var(--color-navy);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.button2:hover {
+    background-color: var(--color-navy);
+    color: var(--color-white);
+}
+
+.button3 {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 1rem; /* Updated to 16pt (1rem) */
+    background-color: transparent;
+    border: 1px solid var(--color-base-gray);
+    border-radius: 20px;
+    padding: 5px 15px;
+    color: var(--color-light-navy);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.button3:hover {
+    background-color: var(--color-base-gray);
+    color: var(--color-navy);
+}
+
+/* ==============================
+   DATE OR CATEGORY STYLES
+   ============================== */
+
+.date-or-category {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 1rem; /* Updated to 16pt (1rem) */
+    color: var(--color-red);
+}
+
+/* ==============================
+   POSTING LISTVIEW STYLES
+   ============================== */
+
+.posting-listview {
+    margin-bottom: var(--space-lg);
+}
+
+.boxlisting-grey {
+    background-color: var(--color-light-gray);
+    border-left: 4px solid var(--color-red);
+    padding: var(--space-md);
+    margin-top: var(--space-sm);
+}
+
+/* ==============================
+   SUBMENU STYLES (Deprecated - now handled above)
+   ============================== */
+
+/* ==============================
+   CONTACT INFO STYLES
+   ============================== */
+
+.contactinfo {
+    margin-top: var(--space-xl);
+    margin-bottom: var(--space-lg);
+}
+
+.institution-name {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1rem; /* Updated to 16pt (1rem) */
+    color: var(--color-red);
+    margin-bottom: var(--space-sm);
+    padding-left: 2rem;
+    position: relative;
+    display: block;
+}
+
+.institution-name:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f0ac";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: var(--color-red);
+}
+
+.contact-name {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1rem; /* Updated to 16pt (1rem) */
+    color: var(--color-navy);
+    margin-bottom: var(--space-xs);
+}
+
+.contact-email {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1rem; /* Updated to 16pt (1rem) */
+    color: var(--color-navy);
+    text-decoration: none;
+    padding-left: 2rem;
+    position: relative;
+    display: block;
+    margin-bottom: var(--space-sm);
+}
+
+.contact-email:before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f0e0";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: var(--color-navy);
+}
+
+.contact-email:hover {
+    color: var(--color-red);
+}
+
+/* ==============================
+   FOOTER STYLES - UPDATED
+   ============================== */
+
+.footer-section {
+    width: 100%;
+    background-color: var(--color-light-gray);
+    padding: 40px 0 20px;
+    color: var(--color-navy);
+}
+
+.footer-column {
+    background-color: var(--color-base-gray);
+    padding: var(--space-md);
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-menu h4 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700; /* Bold */
+    font-size: 0.875rem; /* 14pt */
+    color: var(--color-navy); /* Navy blue */
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.footer-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-menu li {
+    margin-bottom: 10px;
+}
+
+.footer-menu a {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400; /* Regular */
+    font-size: 0.875rem; /* 14pt */
+    color: var(--color-navy); /* Navy blue */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-menu a:hover {
+    color: var(--color-red);
+}
+
+.footer-search {
+    margin-bottom: var(--space-lg);
+    width: 100%;
+}
+
+.footer-search-title {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 0.875rem; /* 14pt - match other footer headings */
+    color: var(--color-navy);
+    margin-bottom: var(--space-sm);
+    text-transform: uppercase;
+}
+
+.footer-search-input {
+    width: 100%;
+    padding: 10px 15px;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-base-gray);
+    border-radius: 4px;
+    color: var(--color-navy);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.875rem; /* 14pt */
+}
+
+.footer-search-input::placeholder {
+    color: var(--color-light-navy);
+}
+
+.footer-tags {
+    margin-bottom: var(--space-lg);
+}
+
+.footer-tags-title {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 0.875rem; /* 14pt - match other footer headings */
+    color: var(--color-navy);
+    margin-bottom: var(--space-sm);
+    text-transform: uppercase;
+}
+
+.footer-tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.footer-tag {
+    display: inline-block;
+    padding: 5px 12px;
+    background-color: var(--color-white);
+    border-radius: 20px;
+    color: var(--color-navy);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.875rem; /* 14pt */
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-tag:hover {
+    background-color: var(--color-red);
+    color: var(--color-white);
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--color-base-gray);
+    padding-top: var(--space-md);
+    margin-top: var(--space-lg);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.copyright {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 0.875rem; /* 14pt to match other footer text */
+    color: var(--color-navy);
+}
+
+.legal {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 0.875rem; /* 14pt to match other footer text */
+    color: var(--color-navy);
+}
+
+.legal a {
+    color: var(--color-navy);
+    text-decoration: none;
+    margin-left: var(--space-sm);
+    transition: color 0.3s ease;
+}
+
+.legal a:hover {
+    color: var(--color-red);
+}
+
+/* ==============================
+   LINK STYLES
+   ============================== */
+
+.link1 {
+    color: var(--color-red);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.link1:hover {
+    color: var(--color-navy);
+}
+
+.link2 {
+    color: var(--color-navy);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.link2:hover {
+    color: var(--color-red);
+}
+
+/* ==============================
+   SECTION STYLES
+   ============================== */
+
+/* Fix for the section with red border alignment */
+.section-with-red-border,
+div.section-with-red-border {
+    border-left: 4px solid var(--color-red) !important;
+    padding-left: var(--space-md) !important;
+    margin: 3rem 0 3rem 0 !important;
+    max-width: 60% !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* Inside content container to align with vertical guidelines */
+.content-container .section-with-red-border {
+    padding-left: var(--space-md);
+    margin-left: 0; /* Remove any margin that might push it right */
+}
+
+/* Add more vertical space between red-bordered section and alert banner */
+.container.section-with-red-border {
+    margin-bottom: 5rem !important; /* Increase from 3rem to 5rem for more space */
+}
+.section-title {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem; /* Updated to 24pt (1.5rem) */
+    color: var(--color-red);
+    text-transform: uppercase;
+    margin-bottom: var(--space-md);
+}
+
+.section-subtitle {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1rem; /* Updated to 16pt (1rem) */
+    color: var(--color-navy);
+    margin-bottom: var(--space-sm);
+}
+
+/* ==============================
+   RESPONSIVE ADJUSTMENTS
+   ============================== */
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .main-navigation {
+        margin-top: 15px;
+        width: 100%;
+        justify-content: flex-start;
+    }
+    
+    .main-navigation ul {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .main-navigation li {
+        margin: 5px 0;
+        margin-left: 0;
+    }
+    
+    .main-navigation .sub-menu {
+        position: static;
+        display: none;
+        width: 100%;
+        box-shadow: none;
+        padding-left: 15px;
+    }
+    
+    .main-navigation li.menu-item-has-children.active .sub-menu {
+        display: block;
+    }
+    
+    .search-container {
+        margin: 15px 0 0 0;
+        width: 100%;
+    }
+    
+    .search-button {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .section-with-red-border {
+        max-width: 100%;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+    }
+    
+    .footer-column {
+        flex: 0 0 100%;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+    }
+    
+    .legal {
+        margin-top: var(--space-sm);
+    }
+}
