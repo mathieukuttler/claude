@@ -988,3 +988,16 @@ nav.main-navigation li:hover > .sub-menu {
     line-height: 1.5;
     margin-bottom: var(--space-md);
 }
+
+/* ==============================
+   TEXT BLOCK STYLES
+   ============================== */
+
+   .headline-red-bold-24pt {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem; /* Updated to 24pt (1.5rem) */
+    color: var(--color-red);
+    text-transform: uppercase;
+    margin-bottom: var(--space-md);
+}
