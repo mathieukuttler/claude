@@ -944,3 +944,40 @@ nav.main-navigation li:hover > .sub-menu {
 .main-navigation .sub-menu {
     display: none; /* Hide submenu by default */
 }
+
+/* ==============================
+   form here: TEXT STYLES for global content elements (e.g., paragraphs, lists)
+   ============================== */
+
+
+/* ==============================
+   HERO SECTION TEXT STYLES
+   ============================== */
+
+   .hero-text-light {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-weight: 400;
+    font-size: 1rem; /* 16pt converted to rem */
+    color: var(--color-light-navy); /* #808fad */
+    line-height: 1.5;
+    margin-bottom: var(--space-md);
+}
+
+.hero-text-light-bold {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 1rem; /* 16pt converted to rem */
+    color: var(--color-light-navy); /* #808fad */
+    line-height: 1.5;
+    margin-bottom: var(--space-md);
+}
+
+.hero-text-light-italic {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1rem; /* 16pt converted to rem */
+    color: var(--color-light-navy); /* #808fad */
+    line-height: 1.5;
+    margin-bottom: var(--space-md);
+}
