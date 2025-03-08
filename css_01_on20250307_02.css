@@ -1020,6 +1020,24 @@ nav.main-navigation li:hover > .sub-menu {
 /* =====================
 media queries for header and footer 
 ======================= +/
+
+/* For screens above 990px - ensure consistent left alignment */
+@media screen and (min-width: 990px) {
+    /* Header container alignment */
+    .header-content {
+        padding-left: 20px;
+        position: relative;
+    }
+    
+    /* Fix logo position */
+    .site-logo {
+        position: relative;
+        margin-left: 0;
+        left: 0;
+    }
+}
+
+
 /* For screens below 1130px - ensure consistent left alignment */
 @media screen and (max-width: 1129px) {
     .content-container,
@@ -1051,7 +1069,6 @@ media queries for header and footer
 @media screen and (min-width: 1130px) {
     .content-container,
     .alert-content,
-    .header-content,
     .main-content-section,
     .footer-section,
     footer,
@@ -1061,21 +1078,34 @@ media queries for header and footer
         padding-left: max(20px, calc((100% - 1130px) / 2));
         padding-right: 20px;
     }
+
+    .header-content {
+        padding-left: max(20px, calc((100% - 1130px) / 2));
+    }
+        /* Keep logo at the left edge of the padding */
+        .site-logo {
+            position: relative;
+            margin-left: 0;
+            left: 0;
+        }
+    }
     
     /* Ensure the red border section's left edge stays aligned */
     .section-with-red-border {
         margin-left: 0 !important;
     }
-}
-    
-    /* STEP 3: Fix alert content */
-    .alert-content {
-        margin-left: 0; /* Remove auto margin */
-        margin-right: auto;
-        padding-left: max(20px, calc((100% - 1130px) / 2));
-    }
+
+ /* STEP 3: Fix alert content */
+ .alert-content {
+    margin-left: 0; /* Remove auto margin */
+    margin-right: auto;
+    padding-left: max(20px, calc((100% - 1130px) / 2));
 }
 
+
+}
+    
+   
 
 
 
