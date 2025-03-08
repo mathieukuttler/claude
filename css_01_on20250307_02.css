@@ -1020,24 +1020,28 @@ nav.main-navigation li:hover > .sub-menu {
 media queries for header and footer 
 ======================= +/
 
-/* Add media query to maintain alignment for screens wider than 1130px */
+/* Update existing media query or add this if it doesn't exist */
 @media screen and (min-width: 1130px) {
+    /* STEP 1: Fix the content container */
     .content-container {
+        margin-left: 0; /* Remove auto margin */
+        margin-right: auto;
         padding-left: max(20px, calc((100% - 1130px) / 2));
         padding-right: 20px;
     }
     
-    /* Ensure the red border section's left edge stays aligned */
+    /* STEP 2: Ensure the red border section's left edge stays aligned */
     .section-with-red-border {
         margin-left: 0 !important;
     }
     
-    /* Keep the alert content aligned with section above */
+    /* STEP 3: Fix alert content */
     .alert-content {
+        margin-left: 0; /* Remove auto margin */
+        margin-right: auto;
         padding-left: max(20px, calc((100% - 1130px) / 2));
     }
 }
-
 /* Temporary debugging CSS - Add this to the bottom of your CSS file */
 body::before {
     content: '';
