@@ -1037,3 +1037,29 @@ media queries for header and footer
         padding-left: max(20px, calc((100% - 1130px) / 2));
     }
 }
+
+/* Temporary debugging CSS - Add this to the bottom of your CSS file */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: calc((100% - 1130px) / 2);
+    width: 1px;
+    height: 100vh;
+    background-color: rgba(255, 0, 0, 0.5);
+    z-index: 9999;
+    pointer-events: none;
+  }
+  
+  /* Shows the 60% content width boundary */
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: calc(((100% - 1130px) / 2) + (1130px * 0.6));
+    width: 1px;
+    height: 100vh;
+    background-color: rgba(0, 0, 255, 0.5);
+    z-index: 9999;
+    pointer-events: none;
+  }
