@@ -1023,17 +1023,19 @@ media queries for header and footer
 
 /* For screens above 990px - ensure consistent left alignment */
 @media screen and (min-width: 990px) {
-    /* Header container alignment */
     .header-content {
-        padding-left: 20px;
-        position: relative;
+        border: 2px solid orange;
     }
     
-    /* Fix logo position */
     .site-logo {
-        position: relative;
-        margin-left: 0;
-        left: 0;
+        border: 2px solid purple;
+    }
+    
+    /* Target all possible header containers */
+    header, 
+    .brxe-header, 
+    [class*="header-container"] {
+        border: 2px solid yellow;
     }
 }
 
