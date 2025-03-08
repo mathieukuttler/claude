@@ -10,7 +10,7 @@
     --color-red: #ff163b;     /* Primary red */
     --color-pink: #ff8a9d;    /* Secondary pink */
     --color-navy: #001e5b;    /* Dark blue background */
-    --color-medium-navy: #405785;    /* Medium navy */
+    --color-medium-navy: #405785;    /* Medium navy */ 
     --color-light-navy: #808fad; /* Light navy */
     --color-base-gray: #ccd2de; /* base gray */
     --color-light-gray: #f3f4f8; /* Light gray */
@@ -226,7 +226,7 @@ hero-text-homeheader {
     font-family: 'Open Sans', Arial, sans-serif;
     font-weight: 400;
     font-size: 1rem; /* 16pt converted to rem */
-    color: var(--color-white);
+    color: var(--color-white) !important;
     line-height: 1.5;
     margin-bottom: var(--space-md);
 }
