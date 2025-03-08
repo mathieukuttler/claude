@@ -73,6 +73,7 @@ body {
     position: relative;
 }
 
+/* Base styles for all screen sizes */
 .content-container {
     width: 100%;
     max-width: 1200px;
@@ -1019,21 +1020,53 @@ nav.main-navigation li:hover > .sub-menu {
 /* =====================
 media queries for header and footer 
 ======================= +/
+/* For screens below 1130px - ensure consistent left alignment */
+@media screen and (max-width: 1129px) {
+    .content-container,
+    .alert-content,
+    .header-content,
+    .main-content-section,
+    .footer-section,
+    footer,
+    .footer-content {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    /* Ensure logo aligns with red-bordered section */
+    .site-logo {
+        margin-left: 0;
+    }
+    
+    /* Red-bordered section alignment */
+    .section-with-red-border {
+        margin-left: 0 !important;
+    }
+}
+
 
 /* Update existing media query or add this if it doesn't exist */
+
+/* For screens above 1130px - maintain our fixes */
 @media screen and (min-width: 1130px) {
-    /* STEP 1: Fix the content container */
-    .content-container {
-        margin-left: 0; /* Remove auto margin */
+    .content-container,
+    .alert-content,
+    .header-content,
+    .main-content-section,
+    .footer-section,
+    footer,
+    .footer-content {
+        margin-left: 0;
         margin-right: auto;
         padding-left: max(20px, calc((100% - 1130px) / 2));
         padding-right: 20px;
     }
     
-    /* STEP 2: Ensure the red border section's left edge stays aligned */
+    /* Ensure the red border section's left edge stays aligned */
     .section-with-red-border {
         margin-left: 0 !important;
     }
+}
     
     /* STEP 3: Fix alert content */
     .alert-content {
@@ -1042,6 +1075,19 @@ media queries for header and footer
         padding-left: max(20px, calc((100% - 1130px) / 2));
     }
 }
+
+
+
+
+
+
+
+
+
+/* ===================
+temporary vertical guide lines for debugging 
+================= */
+
 /* Temporary debugging CSS - Add this to the bottom of your CSS file */
 body::before {
     content: '';
@@ -1067,3 +1113,18 @@ body::before {
     z-index: 9999;
     pointer-events: none;
   }
+
+  /* Guide line for below 1130px screens */
+@media screen and (max-width: 1129px) {
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 20px;
+        width: 1px;
+        height: 100vh;
+        background-color: rgba(0, 255, 0, 0.5); /* Green guide line */
+        z-index: 9999;
+        pointer-events: none;
+    }
+}
