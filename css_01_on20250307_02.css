@@ -235,6 +235,7 @@ div.main-navigation a,
    ALERT BAR STYLES
    ============================== */
 
+/* Update alert section to maintain alignment with red border section */
 .alert-section {
     width: 100%;
     background-color: var(--color-red);
@@ -243,7 +244,11 @@ div.main-navigation a,
 }
 
 .alert-content {
-    text-align: center;
+    text-align: left; /* Change from center to left alignment */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
 }
 
 .alert-label {
@@ -254,6 +259,12 @@ div.main-navigation a,
     text-transform: uppercase;
     margin-bottom: 5px;
     display: block;
+}
+
+/* This wrapper div will maintain the same width as the red-bordered section */
+.alert-content-wrapper {
+    max-width: 60%;
+    width: 100%;
 }
 
 .alert-title {
@@ -1000,4 +1011,29 @@ nav.main-navigation li:hover > .sub-menu {
     color: var(--color-red);
     text-transform: uppercase;
     margin-bottom: var(--space-md);
+}
+
+
+
+
+/* =====================
+media queries for header and footer 
+======================= +/
+
+/* Add media query to maintain alignment for screens wider than 1130px */
+@media screen and (min-width: 1130px) {
+    .content-container {
+        padding-left: max(20px, calc((100% - 1130px) / 2));
+        padding-right: 20px;
+    }
+    
+    /* Ensure the red border section's left edge stays aligned */
+    .section-with-red-border {
+        margin-left: 0 !important;
+    }
+    
+    /* Keep the alert content aligned with section above */
+    .alert-content {
+        padding-left: max(20px, calc((100% - 1130px) / 2));
+    }
 }
