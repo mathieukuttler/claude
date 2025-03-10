@@ -1,0 +1,195 @@
+/* Basic resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-blue: #002b57;
+  --red: #d60000;
+  --white: #ffffff;
+  --max-width: 1200px;
+  --header-padding: 1rem;
+  --overlay-color: rgba(0, 43, 87, 0.4);
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: var(--dark-blue);
+  background-color: var(--white);
+}
+
+/* Main container for general layout */
+.container {
+  width: 90%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* ----------------------------------------
+   NARROW CONTENT (to match text-box width)
+---------------------------------------- */
+.narrow-content {
+  /* Match or slightly exceed .header-text-box width */
+  max-width: 600px; 
+  margin-left: 0;  /* left-align with text-box */
+  margin-right: 0;
+  padding-left: 0; /* remove extra container padding if you prefer */
+}
+
+/* HEADER STYLES */
+.site-header {
+  position: relative;
+  background: url('presserecht_startbild.jpg') center/cover no-repeat;
+  color: var(--white);
+  min-height: 500px; /* ensures a visible hero area */
+}
+
+/* Overlay (optional) */
+.header-content-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--overlay-color);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Inner header content */
+.header-inner {
+  position: relative;
+  z-index: 2; /* above overlay */
+  padding: var(--header-padding);
+}
+
+/* Top row: logo, nav, search */
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.logo-nav-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.site-logo {
+  height: 50px;
+}
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+.main-nav a {
+  text-decoration: none;
+  color: var(--white);
+  font-weight: 600;
+}
+.search-button {
+  background-color: var(--white);
+  color: var(--dark-white);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 3px;
+}
+
+/* The text box with red left border */
+.header-text-box {
+  border-left: 6px solid var(--red);
+  padding-left: 1rem;
+  max-width: 600px;
+}
+.header-text-box h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+.header-text-box p {
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+.cta-button {
+  background-color: var(--red);
+  color: var(--white);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  font-weight: 600;
+}
+
+/* Full-width red ribbon, narrower text inside .narrow-content */
+.red-ribbon {
+  width: 100%;
+  background-color: var(--red);
+  padding: 0.75rem 0;
+  margin-top: 1rem;
+  position: relative;
+  z-index: 2;
+}
+.ribbon-inner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.red-ribbon p {
+  margin-right: auto;
+  font-weight: 600;
+}
+.ribbon-cta {
+  background-color: var(--white);
+  color: var(--red);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  font-weight: 600;
+}
+
+/* MAIN CONTENT */
+.main-content {
+  padding: 2rem 0;
+}
+
+/* FOOTER */
+.site-footer {
+  background-color: var(--dark-blue);
+  color: var(--white);
+  padding: 1rem 0;
+}
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-inner a {
+  color: var(--white);
+  text-decoration: none;
+  margin-left: 1rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .header-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .main-nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .header-text-box {
+    max-width: 100%;
+  }
+  .ribbon-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .narrow-content {
+    max-width: 100%;
+  }
+}
