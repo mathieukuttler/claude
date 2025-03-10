@@ -31,15 +31,18 @@ body {
 }
 
 /* Standard text sizes for consistent typography */
-.text-headline {
+.paragraphs_text-headline {
     font-size: 1.5rem; /* 24pt */
     line-height: 1.3;
 }
 
-.text-standard {
+.paragraphs_text-standard {
     font-size: 1rem; /* 16pt */
     line-height: 1.5;
 }
+
+
+
 
 .light-text {
     font-family: 'Open Sans', Arial, sans-serif;
